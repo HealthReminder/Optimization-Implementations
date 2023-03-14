@@ -26,7 +26,10 @@ public class CircleSpawner : MonoBehaviour
     }
     float time = 0.0f;
     float progress = 0.0f;
-
+    public void ReturnToPool (Transform t)
+    {
+        _pool.ReturnToPool(t);
+    }
     IEnumerator SpawnRoutine()
     {
         time = 0.0f;
