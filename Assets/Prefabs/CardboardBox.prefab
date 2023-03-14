@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6832094837570185561}
   m_Layer: 0
   m_Name: Large (2)
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 313780349967064788}
   m_Layer: 0
   m_Name: Tall
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 7378692593510323434}
   m_Layer: 0
   m_Name: Small
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 7511282295234147038}
   m_Layer: 0
   m_Name: Large (1)
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 933728111631621109}
   m_Layer: 0
   m_Name: Large
-  m_TagString: Untagged
+  m_TagString: Grabbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 7827991583742958024}
   - component: {fileID: -8167095616263560219}
   m_Layer: 0
-  m_Name: ShowBoxes
+  m_Name: CardboardBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

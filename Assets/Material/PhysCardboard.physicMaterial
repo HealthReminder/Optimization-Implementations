@@ -6,7 +6,7 @@ PhysicMaterial:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cardboard
+  m_Name: PhysCardboard
   dynamicFriction: 0.9
   staticFriction: 0.8
   bounciness: 0
