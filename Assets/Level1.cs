@@ -11,13 +11,13 @@ public class Level1 : Level
     }
     IEnumerator StartRoutine()
     {
-        yield return new WaitForSeconds(2);
+        //yield return new WaitForSeconds(2);
         LampAlarm.TurnOn();
         CircleSpawner.Spawn();
-        yield return new WaitForSeconds(5);
-        LampAlarm.TurnOff();
-        yield return new WaitForSeconds(2);
-        LampAlarm.TurnOn();
+        //yield return new WaitForSeconds(5);
+        //LampAlarm.TurnOff();
+        //yield return new WaitForSeconds(2);
+        //LampAlarm.TurnOn();
         yield return new WaitForSeconds(2);
         BoxSpawner.SpawnBoxes(50);
         yield return new WaitForSeconds(5);

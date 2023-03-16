@@ -14,6 +14,7 @@ public class PlayerAim : MonoBehaviour
     {
         // hide the mouse cursor
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
