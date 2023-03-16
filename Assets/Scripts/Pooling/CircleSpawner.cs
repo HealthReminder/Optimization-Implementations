@@ -5,21 +5,21 @@ using UnityEngine;
 public class CircleSpawner : MonoBehaviour
 {
 
-    public float CircleRadius = 5;
-    public int PoolSize = 25;
-    public float ShowerDuration;
-    public AnimationCurve ShowerCurve;
-    public Transform Prefab;
-    public int PoolLayer;
+    [SerializeField]private float _circleRadius = 5;
+    [SerializeField]private int _poolSize = 25;
+    [SerializeField]private float _showerDuration;
+    [SerializeField] private AnimationCurve _showerCurve;
+    [SerializeField] private Transform _prefab;
+    [SerializeField] private int _poolLayer;
     private Pooling<Transform> _pool;
 
     private void Awake()
     {
-        _pool = new Pooling<Transform>(Prefab, PoolSize, transform, PoolLayer);
+        _pool = new Pooling<Transform>(_prefab, _poolSize, transform, _poolLayer);
     }
    
-    [ContextMenu("Do Shower")]
-    public void InstantiateTimed()
+    [ContextMenu("Spawn objects")]
+    public void Spawn()
     {
         StopCoroutine(SpawnRoutine());
         StartCoroutine(SpawnRoutine());
@@ -37,9 +37,9 @@ public class CircleSpawner : MonoBehaviour
         float waitTime;
         while(progress < 1)
         {
-            InstantiateRandom();
-            progress = Mathf.InverseLerp(0, ShowerDuration, time);
-            waitTime = Mathf.Abs(ShowerCurve.Evaluate(progress));
+            SpawnRandom();
+            progress = Mathf.InverseLerp(0, _showerDuration, time);
+            waitTime = Mathf.Abs(_showerCurve.Evaluate(progress));
             time += waitTime;
             yield return new WaitForSeconds(waitTime);
         }
@@ -56,10 +56,10 @@ public class CircleSpawner : MonoBehaviour
     /// <summary>
     /// Instantiate an object in a random position in the circle
     /// </summary>
-    public void InstantiateRandom()
+    public void SpawnRandom()
     {
         float angleInCircle = Random.Range(0f, 360f);
-        Vector3 spawnPosition = transform.position + (Quaternion.Euler(0f, angleInCircle, 0f) * Vector3.forward * CircleRadius);
+        Vector3 spawnPosition = transform.position + (Quaternion.Euler(0f, angleInCircle, 0f) * Vector3.forward * _circleRadius);
         _pool.GetFromPool(spawnPosition, Quaternion.identity);
     }
 
@@ -70,6 +70,6 @@ public class CircleSpawner : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, CircleRadius);
+        Gizmos.DrawWireSphere(transform.position, _circleRadius);
     }
 }
