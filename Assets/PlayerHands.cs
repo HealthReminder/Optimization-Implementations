@@ -28,7 +28,7 @@ public class PlayerHands : MonoBehaviour
             Ray ray = _playerCamera.ViewportPointToRay(new Vector2(0.5f, 0.5f));
             RaycastHit hit;
             //Find a proper item to hold
-            if (Physics.Raycast(ray, out hit, 100))
+            if (Physics.Raycast(ray, out hit, 2))
             {
                 if (hit.collider.attachedRigidbody)
                 {
@@ -78,7 +78,7 @@ public class PlayerHands : MonoBehaviour
         {
             float dist = Vector3.Distance(_currentlyHolding.transform.position, _anchorPoint.position);
             /// Do not apply any forces if the rigidbody is already close enough
-            if (dist >= 0.3f) 
+            if (dist >= 0.3f) { 
                 _currentlyHolding.AddForce(-1 * _currentlyHolding.velocity * 0.2f);
                 _currentlyHolding.AddTorque(-1 * _currentlyHolding.angularVelocity * 0.2f);
             }

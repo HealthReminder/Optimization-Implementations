@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class BoundaryTrigger : MonoBehaviour
+public class Incinerator : MonoBehaviour
 {
-    public void OnTriggerStay(Collider other)
+    //public UnityEvent[] OnImpostorBox;
+    //public UnityEvent[] OnCardboardBox;
+    private void OnTriggerEnter(Collider other)
     {
+        //if(other.GetComponent<CardboardBox>())
+        ///Return object to pool if applies
         if (other.GetComponent<ReturnToPool>())
         {
-            Debug.Log("pol");
-
-            other.GetComponent<ReturnToPool>().Return() ;
-            Debug.Log("Returned object to pool");
+            other.GetComponent<ReturnToPool>().Return();
         }
         if (other.transform.parent != null)
             if (other.transform.parent.GetComponent<ReturnToPool>())
