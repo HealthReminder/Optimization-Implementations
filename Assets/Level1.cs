@@ -4,6 +4,7 @@ using UnityEngine;
 public class Level1 : Level
 {
     public Lamp LampAlarm;
+    public TVScreen TVScreen;
     public override void OnStart()
     {
         base.OnStart();
@@ -11,16 +12,29 @@ public class Level1 : Level
     }
     IEnumerator StartRoutine()
     {
-        //yield return new WaitForSeconds(2);
-        LampAlarm.TurnOn();
+        yield return new WaitForSeconds(1);
+
         CircleSpawner.Spawn();
-        //yield return new WaitForSeconds(5);
-        //LampAlarm.TurnOff();
-        //yield return new WaitForSeconds(2);
-        //LampAlarm.TurnOn();
+        TVScreen.ChangeText("WELCOME TO THE FAMILY");
+        TVScreen.TurnOn();
         yield return new WaitForSeconds(2);
+
+        TVScreen.TurnOff();
+        yield return new WaitForSeconds(1);
+
+        LampAlarm.TurnOn();
+        yield return new WaitForSeconds(1);
+
+        TVScreen.TurnOn();
+        TVScreen.ChangeText("WATCH OUT falling boxes");
+        
+        yield return new WaitForSeconds(1);
+
         BoxSpawner.SpawnBoxes(50);
         yield return new WaitForSeconds(5);
+        TVScreen.TurnOff();
+
+        yield return new WaitForSeconds(1);
         LampAlarm.TurnOff();
 
 
