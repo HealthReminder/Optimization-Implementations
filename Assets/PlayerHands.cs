@@ -5,6 +5,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerHands : MonoBehaviour
 {
+    [SerializeField] private float _throwMultiplier = 10f; ///Multiplies the force applied to throw the object being held
     [SerializeField] private float _forceMultiplier = 0.1f; ///Multiplies the force applied to move the object being held
     [SerializeField] private Transform _anchorPoint; /// The position the held object will move to
     [SerializeField] private Camera _playerCamera;  /// The player camera from where rays will be shot
@@ -16,11 +17,15 @@ public class PlayerHands : MonoBehaviour
 
     private void Update()
     {
+        // Throw the rigidbody if release mouse button
+        if (Input.GetMouseButtonDown(1))
+        {
+            ThrowRigidbody();
+        }
         // Let go of the rigidbody if release mouse button
         if (Input.GetMouseButtonUp(0))
         {
-            _currentlyHolding = null;
-            _springJoint.connectedBody = null;
+            DropRigidbody();
         }
         // Grab a rigidbody if pressed the mouse button down
         if (Input.GetMouseButtonDown(0))
@@ -45,6 +50,23 @@ public class PlayerHands : MonoBehaviour
         if (Input.GetMouseButton(0))
             HoldRigidbody();
     }
+    public void ThrowRigidbody()
+    {
+        if (_currentlyHolding != null)
+        {
+            Rigidbody throwing = _currentlyHolding;
+            DropRigidbody();
+            throwing.AddForce(_playerCamera.ViewportPointToRay(new Vector2(0.5f, 0.5f)).direction.normalized * _throwMultiplier,ForceMode.Impulse);
+        }
+    }
+    /// <summary>
+    /// Detaches the rigidbody from the spring
+    /// </summary>
+    public void DropRigidbody()
+    {
+        _currentlyHolding = null;
+        _springJoint.connectedBody = null;
+    }
     /// <summary>
     /// Configure anchor to hold a new rigidbody
     /// </summary>
@@ -64,7 +86,7 @@ public class PlayerHands : MonoBehaviour
             // Set the connected body of the SpringJoint to be the Rigidbody of the object
             _springJoint.connectedBody = _currentlyHolding;
 
-            // Adjust the SpringJoint's strength and damper values to control the behavior of the spring
+            // Adjust the SpringJoint's properties to control motion
             _springJoint.spring = _springStrength;
             _springJoint.damper = _springDamping;
         }
@@ -78,7 +100,8 @@ public class PlayerHands : MonoBehaviour
         {
             float dist = Vector3.Distance(_currentlyHolding.transform.position, _anchorPoint.position);
             /// Do not apply any forces if the rigidbody is already close enough
-            if (dist >= 0.3f) { 
+            if (dist >= 0.3f)
+            {
                 _currentlyHolding.AddForce(-1 * _currentlyHolding.velocity * 0.2f);
                 _currentlyHolding.AddTorque(-1 * _currentlyHolding.angularVelocity * 0.2f);
             }
