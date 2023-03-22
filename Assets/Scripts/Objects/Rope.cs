@@ -11,10 +11,22 @@ public class Rope : MonoBehaviour
     [SerializeField] private Transform _endTransform;
     //[SerializeField] 
     private List<GameObject> _segments;
+    private LineRenderer _lineRenderer;
 
     void Awake()
     {
+        _lineRenderer = GetComponent<LineRenderer>();
+        _lineRenderer.positionCount = _segmentCount+1;
         InstantiateSegments();
+
+    }
+
+    private void Update()
+    {
+        for (int i = 0; i < _segmentCount; i++)
+            _lineRenderer.SetPosition(i, _segments[i].transform.position);
+        _lineRenderer.SetPosition(_segmentCount, _endTransform.position);
+
     }
     private void InstantiateSegments()
     {

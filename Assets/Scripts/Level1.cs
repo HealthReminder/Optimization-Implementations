@@ -12,12 +12,24 @@ public class Level1 : Level
     }
     IEnumerator StartRoutine()
     {
+        TVScreen.TurnOff();
+
         yield return new WaitForSeconds(1);
 
         CircleSpawner.Spawn();
+        yield return new WaitForSeconds(3);
+
         TVScreen.ChangeText("WELCOME TO THE FAMILY");
         TVScreen.TurnOn();
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
+
+        TVScreen.TurnOff();
+        yield return new WaitForSeconds(1);
+
+        TVScreen.TurnOn();
+        TVScreen.ChangeText("YOUR NEW JOB STARTS NOW");
+        CircleSpawner.Spawn();
+        yield return new WaitForSeconds(3);
 
         TVScreen.TurnOff();
         yield return new WaitForSeconds(1);
@@ -26,8 +38,9 @@ public class Level1 : Level
         yield return new WaitForSeconds(1);
 
         TVScreen.TurnOn();
-        TVScreen.ChangeText("WATCH OUT falling boxes");
-        
+        TVScreen.ChangeText("WATCH OUT FOR FALLING BOXES");
+        CircleSpawner.Spawn();
+
         yield return new WaitForSeconds(1);
 
         BoxSpawner.SpawnBoxes(50);
@@ -36,6 +49,17 @@ public class Level1 : Level
 
         yield return new WaitForSeconds(1);
         LampAlarm.TurnOff();
+
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            TVScreen.ChangeText("PUT ALL THE BOXES ON THE BELT");
+            TVScreen.TurnOn();
+            yield return new WaitForSeconds(1);
+            TVScreen.TurnOff();
+            CircleSpawner.Spawn();
+
+        }
 
 
 

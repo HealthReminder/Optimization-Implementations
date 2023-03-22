@@ -3,9 +3,9 @@ using TMPro;
 
 public class TVScreen : MonoBehaviour
 {
+    public bool IsOn = false;
     [SerializeField] private GameObject _screenobj;
     [SerializeField] private TextMeshProUGUI _textMesh;
-    private bool _isOn;
     [SerializeField] private string _currentText = "";
     public void ChangeText(string newText)
     {
@@ -15,8 +15,8 @@ public class TVScreen : MonoBehaviour
     [ContextMenu("Toggle")]
     public void Toggle()
     {
-        _isOn = !_isOn;
-        if (_isOn)
+        IsOn = !IsOn;
+        if (IsOn)
             TurnOn();
         else
             TurnOff();

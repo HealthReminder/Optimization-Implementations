@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class ConveyorBelt : MonoBehaviour
 {
+    public bool IsOn = true;
     [SerializeField] private Vector3 forceDirection; //The direction objects will be moved
     [SerializeField] private float forceMultiplier; //The direction objects will be moved
     private void OnCollisionStay(Collision collision)
     {
+        if (!IsOn)
+            return;
+
         Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
         if (rb)
         {
