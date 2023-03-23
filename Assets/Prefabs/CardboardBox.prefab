@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7752507540557676948}
+  - component: {fileID: 6087784990121133639}
   - component: {fileID: 8469455644422860563}
   - component: {fileID: 5623394442300342727}
   - component: {fileID: 4390998287927389652}
@@ -36,6 +37,34 @@ Transform:
   m_Father: {fileID: 1748839055102479849}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6087784990121133639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052804866379460205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68b5335390ba324fb49659f4acd09cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMagnitude: 1.5
+  PositionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2259434793625180018}
+        m_TargetAssemblyTypeName: PlaySoundOnPosition, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &8469455644422860563
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -147,6 +176,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3246877540303163598}
+  - component: {fileID: 3628745170144191912}
   - component: {fileID: 8680496510582584538}
   - component: {fileID: 2260327871673966524}
   - component: {fileID: 8769522988275162489}
@@ -173,6 +203,34 @@ Transform:
   m_Father: {fileID: 1748839055102479849}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3628745170144191912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3344081591946779893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68b5335390ba324fb49659f4acd09cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMagnitude: 1.5
+  PositionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2259434793625180018}
+        m_TargetAssemblyTypeName: PlaySoundOnPosition, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &8680496510582584538
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -272,6 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2898917633999058376}
+  - component: {fileID: 3074709659229636304}
   - component: {fileID: 8206828227272577836}
   - component: {fileID: 8305165097909140338}
   - component: {fileID: 3494678761570713729}
@@ -298,6 +357,34 @@ Transform:
   m_Father: {fileID: 1748839055102479849}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3074709659229636304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5230024939641172584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68b5335390ba324fb49659f4acd09cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMagnitude: 1.5
+  PositionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2259434793625180018}
+        m_TargetAssemblyTypeName: PlaySoundOnPosition, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &8206828227272577836
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -397,6 +484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3965766775831877555}
+  - component: {fileID: 5096042812094258218}
   - component: {fileID: 815359739863059996}
   - component: {fileID: 8365527977505697440}
   - component: {fileID: 1109382570977800140}
@@ -423,6 +511,34 @@ Transform:
   m_Father: {fileID: 1748839055102479849}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5096042812094258218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5595476582202722985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68b5335390ba324fb49659f4acd09cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMagnitude: 1.5
+  PositionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2259434793625180018}
+        m_TargetAssemblyTypeName: PlaySoundOnPosition, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &815359739863059996
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -522,6 +638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 30567461631057423}
+  - component: {fileID: 7532099875898020328}
   - component: {fileID: 9166270326520392461}
   - component: {fileID: 7186636706238365276}
   - component: {fileID: 6012195490339125586}
@@ -548,6 +665,34 @@ Transform:
   m_Father: {fileID: 1748839055102479849}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7532099875898020328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5696638579656773775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68b5335390ba324fb49659f4acd09cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMagnitude: 1.5
+  PositionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2259434793625180018}
+        m_TargetAssemblyTypeName: PlaySoundOnPosition, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!33 &9166270326520392461
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -649,6 +794,7 @@ GameObject:
   - component: {fileID: 1748839055102479849}
   - component: {fileID: 7827991583742958024}
   - component: {fileID: -8167095616263560219}
+  - component: {fileID: 2259434793625180018}
   m_Layer: 0
   m_Name: CardboardBox
   m_TagString: Untagged
@@ -702,21 +848,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 6425323411580792712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3842d2de883dbf24a80c6749b752091c, type: 3}
+  m_Script: {fileID: 11500000, guid: baf8bca825a66554b80e8962497e5af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _onReturn:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CircleSpawner, Assembly-CSharp
-        m_MethodName: ReturnToPool
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &2259434793625180018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6425323411580792712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d261865d254b0148b96ca2881db1619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setName: CardboardBox
+  volume: 0.5
+  pitchDefault: 0.9
+  pitchRange: 0.2

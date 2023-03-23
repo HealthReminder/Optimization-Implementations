@@ -1,0 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayAudioOnPosition : MonoBehaviour
+{
+    [SerializeField] private string setName;
+    [SerializeField] private float volume;
+    [SerializeField] private float pitchDefault = 1;
+    [SerializeField] private float pitchRange = 0;
+    public void PlaySound(Vector3 pos)
+    {
+        AudioManager.Instance.SpawnSound(setName, volume, pos, pitchDefault, pitchRange);
+    }
+}

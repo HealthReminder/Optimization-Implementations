@@ -11,12 +11,12 @@ public class Incinerator : MonoBehaviour
     {
         //if(other.GetComponent<CardboardBox>())
         ///Return object to pool if applies
-        if (other.GetComponent<ReturnToPool>())
+        if (other.GetComponent<OnReturnToPool>())
         {
-            other.GetComponent<ReturnToPool>().Return();
+            other.GetComponent<OnReturnToPool>().Return();
         }
         if (other.transform.parent != null)
-            if (other.transform.parent.GetComponent<ReturnToPool>())
-                other.transform.parent.GetComponent<ReturnToPool>().Return();
+            if (other.transform.parent.GetComponent<OnReturnToPool>())
+                other.transform.parent.GetComponent<OnReturnToPool>().Return();
     }
 }

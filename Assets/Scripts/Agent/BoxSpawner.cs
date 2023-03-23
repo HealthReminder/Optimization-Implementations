@@ -43,8 +43,7 @@ public class BoxSpawner : MonoBehaviour
                 new Vector3(Random.Range((float)-PositionRange, (float)PositionRange),
                 Random.Range(-PositionRange, PositionRange),
                 Random.Range(-PositionRange, PositionRange)), 
-                Quaternion.identity);
-
+                Quaternion.identity).gameObject.SetActive(true);
             objCount += 1;
             yield return new WaitForSeconds(waitTime);
         }

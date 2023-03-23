@@ -25,7 +25,8 @@ public class Pooling<PoolObject> where PoolObject : Component
 
         for (int i = 0; i < initialPoolSize; i++)
         {
-            PoolObject obj = GameObject.Instantiate(_prefab, parent);
+            PoolObject obj;
+            obj = GameObject.Instantiate(_prefab, parent);
             obj.gameObject.layer = _layer;
             obj.gameObject.SetActive(false);
             obj.transform.parent = _parent;
@@ -48,13 +49,11 @@ public class Pooling<PoolObject> where PoolObject : Component
             obj = _poolQueue.Dequeue();
             obj.transform.position = position;
             obj.transform.rotation = rotation;
-            obj.gameObject.SetActive(true);
         }
         else
         {
             obj = GameObject.Instantiate(_prefab, position, rotation, _parent);
             obj.gameObject.layer = _layer;
-            obj.gameObject.SetActive(true);
 
         }
         if (obj.GetComponent<Rigidbody>())

@@ -60,7 +60,7 @@ public class CircleSpawner : MonoBehaviour
     {
         float angleInCircle = Random.Range(0f, 360f);
         Vector3 spawnPosition = transform.position + (Quaternion.Euler(0f, angleInCircle, 0f) * Vector3.forward * _circleRadius);
-        _pool.GetFromPool(spawnPosition, Quaternion.identity);
+        _pool.GetFromPool(spawnPosition, Quaternion.identity).gameObject.SetActive(true);
     }
 
     /// <summary>

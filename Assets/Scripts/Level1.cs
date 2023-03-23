@@ -50,10 +50,10 @@ public class Level1 : Level
         yield return new WaitForSeconds(1);
         LampAlarm.TurnOff();
 
+        TVScreen.ChangeText("PUT ALL THE BOXES ON THE BELT");
         while (true)
         {
             yield return new WaitForSeconds(0.5f);
-            TVScreen.ChangeText("PUT ALL THE BOXES ON THE BELT");
             TVScreen.TurnOn();
             yield return new WaitForSeconds(1);
             TVScreen.TurnOff();
