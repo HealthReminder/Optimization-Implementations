@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
-public class Rope : MonoBehaviour
+public class FixedRope : MonoBehaviour
 {
 
     [SerializeField] private int _segmentCount = 10;
