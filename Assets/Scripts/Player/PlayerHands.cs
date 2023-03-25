@@ -104,6 +104,9 @@ public class PlayerHands : MonoBehaviour
             {
                 _currentlyHolding.AddForce(-1 * _currentlyHolding.velocity * 0.2f);
                 _currentlyHolding.AddTorque(-1 * _currentlyHolding.angularVelocity * 0.2f);
+            } else if (dist >= 0.5f)
+            {
+                _currentlyHolding.AddForce(_currentlyHolding.transform.position - _anchorPoint.position);
             }
         }
     }

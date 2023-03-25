@@ -13,7 +13,9 @@ public class Lever : MonoBehaviour
     private float _currentAngle;
     [SerializeField] UnityEvent[] OnMaxEvents; // Events triggered when the handle is > 45 degrees
     [SerializeField] UnityEvent[] OnMinEvents; // Events triggered when the handle is < -45 degrees
-
+    /// <summary>
+    /// Record the state of the lever based on its angle
+    /// </summary>
     void Update()
     {
         _currentAngle = _leverHandle.localEulerAngles.x; // Get current angle of the handle
