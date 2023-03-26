@@ -6,7 +6,7 @@ using UnityEngine;
 /// </summary>
 public class ConveyorBelt : MonoBehaviour
 {
-    [SerializeField] private bool _isOn = true; // Is moving objects
+    public bool IsOn = true; // Is moving objects
     [SerializeField] private Vector3 forceDirection; // The direction objects will be moved
     [SerializeField] private float forceMultiplier; // The direction objects will be moved
     private List<Rigidbody> _restingRigidbodies; // Records the rigidbodies that are resting on the belt
@@ -44,7 +44,7 @@ public class ConveyorBelt : MonoBehaviour
     /// </summary>
     private void OnCollisionStay(Collision collision)
     {
-        if (!_isOn)
+        if (!IsOn)
             return;
 
         Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
@@ -61,7 +61,7 @@ public class ConveyorBelt : MonoBehaviour
     /// <param name="isOn">New state of the belt</param>
     public void Toggle(bool isOn)
     {
-        _isOn = isOn;
+        IsOn = isOn;
         if(isOn)
             foreach (Rigidbody rb in _restingRigidbodies)
             {

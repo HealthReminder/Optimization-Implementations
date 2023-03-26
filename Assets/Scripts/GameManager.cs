@@ -18,14 +18,14 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
 
-        _circleSpawner.Spawn();
-        yield return new WaitForSeconds(3);
+        //_circleSpawner.Spawn();
+        //yield return new WaitForSeconds(3);
 
-        _TVScreen.ChangeText("WELCOME TO THE FAMILY");
-        _TVScreen.TurnOn();
-        yield return new WaitForSeconds(3);
+        //_TVScreen.ChangeText("WELCOME TO THE FAMILY");
+        //_TVScreen.TurnOn();
+        //yield return new WaitForSeconds(3);
 
-        _TVScreen.TurnOff();
+        //_TVScreen.TurnOff();
         yield return new WaitForSeconds(1);
         RegularEnding.Initiate();
         while (true)
