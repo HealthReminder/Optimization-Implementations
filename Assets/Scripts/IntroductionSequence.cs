@@ -9,7 +9,7 @@ public class IntroductionSequence : MonoBehaviour
     {
         StartCoroutine(SkipRoutine());
     }
-    IEnumerator SkipRoutine()
+    public IEnumerator SkipRoutine()
     {
         foreach (GameObject g in _disableOnSkip)
             g.SetActive(false);
@@ -32,7 +32,7 @@ public class IntroductionSequence : MonoBehaviour
     {
         StartCoroutine(StartRoutine());
     }
-    IEnumerator StartRoutine()
+    public IEnumerator StartRoutine()
     {
         // Title
         yield return _levelManager.PlayerLookAt(_levelManager.titleTransform, 0.5f);
@@ -47,15 +47,15 @@ public class IntroductionSequence : MonoBehaviour
         yield return _levelManager.PlayerLookAt(_levelManager.lampAlarm.transform, 0.5f);
         yield return new WaitForSeconds(1);
         StartCoroutine(_levelManager.PlayerLookAt(_levelManager.TVScreen.transform, 0.5f));
-        yield return _levelManager.ShowMessageRoutine("WELCOME TO THE FAMILY");
+        yield return _levelManager.TVMessage("WELCOME TO THE FAMILY");
 
         // First task
-        yield return _levelManager.ShowMessageRoutine("YOUR SHIFT STARTS NOW", true);
+        yield return _levelManager.TVMessage("YOUR SHIFT STARTS NOW", true);
         yield return new WaitForSeconds(0.5f);
         yield return _levelManager.PlayerLookAt(_levelManager.lampAlarm.transform, 0.5f);
         yield return _levelManager.ToggleBeltLights(true);
         yield return _levelManager.PlayerLookAt(_levelManager.TVScreen.transform, 0.5f);
-        StartCoroutine(_levelManager.ShowMessageRoutine("TURN THE CONVEYOR BELT ON", true));
+        StartCoroutine(_levelManager.TVMessage("TURN THE CONVEYOR BELT ON", true));
         yield return new WaitForSeconds(1);
         yield return _levelManager.PlayerLookAt(_levelManager.lampAlarm.transform, 0.5f);
         yield return new WaitForSeconds(1);
@@ -63,11 +63,13 @@ public class IntroductionSequence : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         _levelManager.playerController.CanLook = _levelManager.playerController.CanMove = true;
 
-
+        _levelManager.TVScreen.IsBlinking = true;
         while (!_levelManager.conveyorBelt.IsOn)
-            yield return _levelManager.BlinkTVScreen();
+            yield return null;
+        _levelManager.TVScreen.IsBlinking = false;
+
         yield return new WaitForSeconds(2);
-        yield return _levelManager.ShowMessageRoutine("GOOD    JOB");
+        yield return _levelManager.TVMessage("GOOD    JOB");
 
 
         //_lampAlarm.TurnOn();

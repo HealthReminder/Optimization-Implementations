@@ -5,10 +5,24 @@ using UnityEngine.Events;
 public class TVScreen : MonoBehaviour
 {
     public bool IsOn = false;
+    public bool IsBlinking = false;
     [SerializeField] private GameObject _screenobj;
     [SerializeField] private TextMeshProUGUI _textMesh;
     [SerializeField] private string _currentText = "";
     [SerializeField] private UnityEvent[] OnChangeTextEvents;
+    float _lastBlink = 0;
+    private void Update()
+    {
+        if (IsBlinking)
+        {
+            _lastBlink += Time.deltaTime;
+            if (_lastBlink >= 1)
+            {
+                _lastBlink = 0;
+                _screenobj.SetActive(!_screenobj.activeSelf);
+            }
+        }
+    }
     public void ChangeText(string newText)
     {
         _textMesh.text = newText;

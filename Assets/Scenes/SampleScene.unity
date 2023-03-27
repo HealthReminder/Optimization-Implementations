@@ -1020,6 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsOn: 0
+  IsBlinking: 0
   _screenobj: {fileID: 461404781}
   _textMesh: {fileID: 993134813}
   _currentText: WELCOME TO YOUR NEW FAMILY
@@ -7705,8 +7706,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1452827517}
   - component: {fileID: 1452827516}
-  - component: {fileID: 1452827518}
   - component: {fileID: 1452827519}
+  - component: {fileID: 1452827518}
+  - component: {fileID: 1452827520}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7726,10 +7728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e44f2ecb9d4f9c42ae4175147697de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSkipIntro: 1
+  IsSkipIntro: 0
   _circleSpawner: {fileID: 855834574}
   _TVScreen: {fileID: 254328595}
-  RegularEnding: {fileID: 1452827518}
+  Introduction: {fileID: 1452827518}
+  Work: {fileID: 1452827520}
 --- !u!4 &1452827517
 Transform:
   m_ObjectHideFlags: 0
@@ -7793,6 +7796,19 @@ MonoBehaviour:
   - {fileID: 2125481398}
   centerLight: {fileID: 346709737}
   leverLight: {fileID: 750080635226051262}
+--- !u!114 &1452827520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452827515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ebbfce37c0a1449936fd9ebb028f9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _levelManager: {fileID: 1452827519}
 --- !u!1 &1470615560
 GameObject:
   m_ObjectHideFlags: 0

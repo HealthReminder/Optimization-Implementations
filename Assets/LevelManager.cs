@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
-   internal IEnumerator ToggleBeltLights(bool isOn)
+    internal IEnumerator ToggleBeltLights(bool isOn)
     {
         foreach (Lamp lamp in beltLights)
         {
@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
     }
-    internal IEnumerator ShowMessageRoutine(string txt, bool leaveOn = false)
+    internal IEnumerator TVMessage(string txt, bool leaveOn = false)
     {
 
         TVScreen.TurnOn();
@@ -69,11 +69,5 @@ public class LevelManager : MonoBehaviour
 
         yield break;
     }
-    internal IEnumerator BlinkTVScreen()
-    {
-        yield return new WaitForSeconds(0.5f);
-        TVScreen.TurnOn();
-        yield return new WaitForSeconds(1);
-        TVScreen.TurnOff();
-    }
+    
 }

@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public bool IsSkipIntro = false;
     [SerializeField] private CircleSpawner _circleSpawner;
     [SerializeField] private TVScreen _TVScreen;
-    [SerializeField] IntroductionSequence RegularEnding;
+    [SerializeField] IntroductionSequence Introduction;
+    [SerializeField] WorkSequence Work;
     private void Start()
     {
         StartCoroutine(GameLoop());
@@ -27,10 +28,15 @@ public class GameManager : MonoBehaviour
         //yield return new WaitForSeconds(3);
 
         //_TVScreen.TurnOff();
-        if (!IsSkipIntro)
-            RegularEnding.Initiate();
+        if (IsSkipIntro)
+            yield return Introduction.SkipRoutine();
         else
-            RegularEnding.Skip();
+            yield return Introduction.StartRoutine();
+
+        yield return new WaitForSeconds(1);
+
+        StartCoroutine(Work.StartRoutine());
+
         while (true)
         {
             yield return null;
