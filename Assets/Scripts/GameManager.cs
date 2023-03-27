@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class GameManager : MonoBehaviour
 {
+    public bool IsSkipIntro = false;
     [SerializeField] private CircleSpawner _circleSpawner;
     [SerializeField] private TVScreen _TVScreen;
     [SerializeField] IntroductionSequence RegularEnding;
@@ -26,7 +27,10 @@ public class GameManager : MonoBehaviour
         //yield return new WaitForSeconds(3);
 
         //_TVScreen.TurnOff();
-        RegularEnding.Initiate();
+        if (!IsSkipIntro)
+            RegularEnding.Initiate();
+        else
+            RegularEnding.Skip();
         while (true)
         {
             yield return null;

@@ -4,6 +4,30 @@ using UnityEngine;
 public class IntroductionSequence : MonoBehaviour
 {
     [SerializeField] private LevelManager _levelManager;
+    [SerializeField] private GameObject[] _disableOnSkip;
+    public void Skip()
+    {
+        StartCoroutine(SkipRoutine());
+    }
+    IEnumerator SkipRoutine()
+    {
+        foreach (GameObject g in _disableOnSkip)
+            g.SetActive(false);
+
+        yield return new WaitForSeconds(0.1f);
+        StartCoroutine(_levelManager.ToggleTitleLights(true));
+        yield return new WaitForSeconds(0.1f);
+        _levelManager.recordPlayer.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        _levelManager.centerLight.TurnOn();
+        yield return new WaitForSeconds(0.1f);
+        StartCoroutine(_levelManager.ToggleBeltLights(true));
+        yield return new WaitForSeconds(0.1f);
+        _levelManager.leverLight.TurnOn();
+        yield return new WaitForSeconds(0.25f);
+        _levelManager.playerController.CanLook = _levelManager.playerController.CanMove = true;
+
+    }
     public void Initiate()
     {
         StartCoroutine(StartRoutine());

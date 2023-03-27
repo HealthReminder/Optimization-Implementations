@@ -8,8 +8,6 @@ public class PlayerAim : MonoBehaviour
     public float maxDistance = 100f; // the maximum distance for the raycast
     public float offset = 0.1f; // offset from the surface
 
-    private bool isAiming; // flag for whether the object is being aimed or not
-
     private void Start()
     {
         // hide the mouse cursor

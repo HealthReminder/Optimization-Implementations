@@ -23,8 +23,7 @@ public class LookAtSmooth : MonoBehaviour
             yield return null;
         }
         yield return null;
-
-        transform.rotation = _targetRotation;
+        transform.eulerAngles = _targetRotation.eulerAngles;
 
         yield break;
     }
