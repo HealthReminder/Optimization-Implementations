@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private CircleSpawner _circleSpawner;
     [SerializeField] private TVScreen _TVScreen;
-    [SerializeField] RegularEnding RegularEnding;
+    [SerializeField] IntroductionSequence RegularEnding;
     private void Start()
     {
         StartCoroutine(GameLoop());
@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
         //yield return new WaitForSeconds(3);
 
         //_TVScreen.TurnOff();
-        yield return new WaitForSeconds(1);
         RegularEnding.Initiate();
         while (true)
         {

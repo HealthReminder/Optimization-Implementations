@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    public bool CanLook = true;
+    public bool CanMove = true;
     public float speed = 5f;
     public float sensitivity = 2f;
 
@@ -29,7 +31,8 @@ public class PlayerController : MonoBehaviour
         mouseY = Mathf.Clamp(mouseY, -90f, 90f);
 
         // Rotate player based on mouse movement
-        transform.eulerAngles = new Vector3(mouseY, mouseX, 0f);
+        if(CanLook)
+            transform.eulerAngles = new Vector3(mouseY, mouseX, 0f);
 
         // Calculate movement direction based on input and current rotation
         Vector3 moveHorizontal = transform.right * moveX;
@@ -37,6 +40,7 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDir = (moveHorizontal + moveVertical).normalized;
 
         // Move player based on calculated direction and speed using Rigidbody
-        rb.MovePosition(transform.position + moveDir * speed * Time.fixedDeltaTime);
+        if (CanMove)
+            rb.MovePosition(transform.position + moveDir * speed * Time.fixedDeltaTime);
     }
 }
