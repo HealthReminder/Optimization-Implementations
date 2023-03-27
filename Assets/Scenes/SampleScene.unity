@@ -7607,6 +7607,7 @@ GameObject:
   - component: {fileID: 1452827517}
   - component: {fileID: 1452827516}
   - component: {fileID: 1452827518}
+  - component: {fileID: 1452827519}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7656,26 +7657,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10768d429955354e9e25d98c708dc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerController: {fileID: 963194230}
-  _playerLookAt: {fileID: 963194235}
-  _titleTransform: {fileID: 1211461387}
+  _levelManager: {fileID: 1452827519}
+--- !u!114 &1452827519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1452827515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a852b621775284092dbef994c6d87c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _circleSpawner: {fileID: 855834574}
   _boxSpawner: {fileID: 918339312}
-  _lampAlarm: {fileID: 1508349165}
-  _TVScreen: {fileID: 254328595}
-  _ConveyorBelt: {fileID: 86661291}
-  TitleLights:
+  playerController: {fileID: 963194230}
+  playerLookAt: {fileID: 963194235}
+  TVScreen: {fileID: 254328595}
+  conveyorBelt: {fileID: 86661291}
+  titleTransform: {fileID: 1211461387}
+  recordPlayer: {fileID: 1064201205}
+  lampAlarm: {fileID: 1508349165}
+  titleLights:
   - {fileID: 3202056308731868496}
   - {fileID: 1134781930}
-  BeltLights:
+  beltLights:
   - {fileID: 2008670817}
   - {fileID: 2026886487}
   - {fileID: 776740418}
   - {fileID: 319628243}
   - {fileID: 2125481398}
-  CenterLight: {fileID: 346709737}
-  LeverLight: {fileID: 750080635226051262}
-  recordPlayer: {fileID: 1064201205}
+  centerLight: {fileID: 346709737}
+  leverLight: {fileID: 750080635226051262}
 --- !u!1 &1470615560
 GameObject:
   m_ObjectHideFlags: 0
