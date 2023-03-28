@@ -7,7 +7,8 @@ using UnityEngine;
 /// </summary>
 public class BoxCountTrigger : MonoBehaviour
 {
-    [SerializeField] private int _currentCount; // How many boxes entered the trigger so far
+    [SerializeField] private int _currentCount; /// How many boxes entered the trigger so far
+    public int CurrentCount { get { return _currentCount; } } /// Return the amount of boxes that passed through the trigger
     /// <summary>
     /// Count up as boxes enter the trigger
     /// </summary>

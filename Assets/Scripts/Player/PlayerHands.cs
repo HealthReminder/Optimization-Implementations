@@ -100,11 +100,11 @@ public class PlayerHands : MonoBehaviour
         {
             float dist = Vector3.Distance(_currentlyHolding.transform.position, _anchorPoint.position);
             /// Do not apply any forces if the rigidbody is already close enough
-            if (dist >= 0.3f)
+            if (dist >= 0.2f)
             {
                 _currentlyHolding.AddForce(-1 * _currentlyHolding.velocity * 0.2f);
                 _currentlyHolding.AddTorque(-1 * _currentlyHolding.angularVelocity * 0.2f);
-            } else if (dist >= 0.5f)
+            } else if (dist >= 0.3f)
             {
                 _currentlyHolding.AddForce(_currentlyHolding.transform.position - _anchorPoint.position);
             }

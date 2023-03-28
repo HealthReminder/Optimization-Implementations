@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 /// <summary>
 /// This object will measure the rotation of a lever handle 
@@ -8,11 +9,13 @@ using UnityEngine.Events;
 public class Lever : MonoBehaviour
 {
     [SerializeField] private Transform _leverHandle;
+    [SerializeField] private Rigidbody _leverRb;
     [SerializeField] private bool _currentState;
     [SerializeField] private bool _lastState;
     private float _currentAngle;
     [SerializeField] UnityEvent[] OnMaxEvents; // Events triggered when the handle is > 45 degrees
     [SerializeField] UnityEvent[] OnMinEvents; // Events triggered when the handle is < -45 degrees
+
     /// <summary>
     /// Record the state of the lever based on its angle
     /// </summary>
@@ -26,17 +29,30 @@ public class Lever : MonoBehaviour
         if (_currentAngle >= 30)
         {
             _currentState = true;
-            if(_currentState != _lastState)
+            if (_currentState != _lastState)
+            {
                 InvokeEvents(OnMaxEvents);
+                StartCoroutine(JamRoutine());
+            }
         }
         else if (_currentAngle <= -30){
             _currentState = false;
             if (_currentState != _lastState)
+            {
                 InvokeEvents(OnMinEvents);
+                StartCoroutine(JamRoutine());
+            }
         }
         _lastState = _currentState;
     }
-
+    IEnumerator JamRoutine()
+    {
+        _leverRb.isKinematic = true;
+        _leverRb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(2);
+        _leverRb.isKinematic = false;
+        yield break;
+    }
     /// <summary>
     /// Perform action when handle is at maximum angle
     /// </summary>
