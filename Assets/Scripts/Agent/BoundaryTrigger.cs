@@ -10,11 +10,15 @@ public class BoundaryTrigger : MonoBehaviour
         {
             Debug.Log("pol");
 
-            other.GetComponent<OnReturnToPool>().Return() ;
+            other.GetComponent<OnReturnToPool>().Return();
             Debug.Log("Returned object to pool");
         }
-        if (other.transform.parent != null)
+        else if (other.transform.parent != null)
+        {
             if (other.transform.parent.GetComponent<OnReturnToPool>())
                 other.transform.parent.GetComponent<OnReturnToPool>().Return();
+        }
+        else
+            other.gameObject.SetActive(false);
     }
 }
