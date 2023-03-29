@@ -12,7 +12,7 @@ public class HydraulicPress : MonoBehaviour
     public bool IsOn { get; set; }
     [SerializeField] private BackAndForthMovement _arm;
 
-    float delay = 1.5f;
+    [SerializeField] private float _delay = 1.5f;
     float elapsedTime = 0;
     float armPos = 0;
 
@@ -22,7 +22,7 @@ public class HydraulicPress : MonoBehaviour
         {
             // Trigger movement every interval
             elapsedTime += Time.deltaTime;
-            if (elapsedTime >= delay)
+            if (elapsedTime >= _delay)
             {
                 elapsedTime = 0;
                 _arm.Move();
