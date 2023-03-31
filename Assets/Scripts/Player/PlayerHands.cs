@@ -35,15 +35,16 @@ public class PlayerHands : MonoBehaviour
             //Find a proper item to hold
             if (Physics.Raycast(ray, out hit, 2))
             {
-                if (hit.collider.attachedRigidbody)
-                {
-                    if (!hit.collider.attachedRigidbody.isKinematic)
+                if (hit.collider.tag == "Grabbable")
+                    if (hit.collider.attachedRigidbody)
                     {
-                        _currentlyHolding = hit.collider.attachedRigidbody;
-                        GrabRigidbody();
-                        Debug.DrawLine(ray.origin, hit.point, Color.magenta, 2);
+                        if (!hit.collider.attachedRigidbody.isKinematic)
+                        {
+                            _currentlyHolding = hit.collider.attachedRigidbody;
+                            GrabRigidbody();
+                            Debug.DrawLine(ray.origin, hit.point, Color.magenta, 2);
+                        }
                     }
-                }
             }
         }
         // Apply forces while holding the rigidbody to estabilize it
@@ -56,7 +57,7 @@ public class PlayerHands : MonoBehaviour
         {
             Rigidbody throwing = _currentlyHolding;
             DropRigidbody();
-            throwing.AddForce(_playerCamera.ViewportPointToRay(new Vector2(0.5f, 0.5f)).direction.normalized * _throwMultiplier,ForceMode.Impulse);
+            throwing.AddForce(_playerCamera.ViewportPointToRay(new Vector2(0.5f, 0.5f)).direction.normalized * _throwMultiplier, ForceMode.Impulse);
         }
     }
     /// <summary>
@@ -104,7 +105,8 @@ public class PlayerHands : MonoBehaviour
             {
                 _currentlyHolding.AddForce(-1 * _currentlyHolding.velocity * 0.2f);
                 _currentlyHolding.AddTorque(-1 * _currentlyHolding.angularVelocity * 0.2f);
-            } else if (dist >= 0.3f)
+            }
+            else if (dist >= 0.3f)
             {
                 _currentlyHolding.AddForce(_currentlyHolding.transform.position - _anchorPoint.position);
             }
