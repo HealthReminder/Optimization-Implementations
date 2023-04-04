@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public bool CanMove = true;
     public float speed = 5f;
     public float sensitivity = 2f;
+    public Camera Camera;
 
     private Rigidbody rb;
     private float mouseX;
@@ -31,8 +32,11 @@ public class PlayerController : MonoBehaviour
         mouseY = Mathf.Clamp(mouseY, -90f, 90f);
 
         // Rotate player based on mouse movement
-        if(CanLook)
-            transform.eulerAngles = new Vector3(mouseY, mouseX, 0f);
+        if (CanLook)
+        {
+            Quaternion targetRotation = Quaternion.Euler(mouseY, mouseX, 0f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 20f);
+        }
 
         // Calculate movement direction based on input and current rotation
         Vector3 moveHorizontal = transform.right * moveX;

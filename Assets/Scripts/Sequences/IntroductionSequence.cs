@@ -45,12 +45,12 @@ public class IntroductionSequence : MonoBehaviour
 
         // Welcome message
         yield return _levelManager.PlayerLookAt(_levelManager.lampAlarm.transform, 0.5f);
-        yield return new WaitForSeconds(1);
+        //yield return new WaitForSeconds(0.5f);
         StartCoroutine(_levelManager.PlayerLookAt(_levelManager.TVScreen.transform, 0.5f));
-        yield return _levelManager.TVMessage("WELCOME TO THE FAMILY");
+        yield return _levelManager.TVMessage("GOOD    JOB");
+        yield return _levelManager.TVMessage("THIS IS YOUR FINAL SHIFT");
 
         // First task
-        yield return _levelManager.TVMessage("YOUR SHIFT STARTS NOW", true);
         yield return new WaitForSeconds(0.5f);
         yield return _levelManager.PlayerLookAt(_levelManager.lampAlarm.transform, 0.5f);
         yield return _levelManager.ToggleBeltLights(true);
@@ -69,7 +69,8 @@ public class IntroductionSequence : MonoBehaviour
         _levelManager.TVScreen.IsBlinking = false;
 
         yield return new WaitForSeconds(2);
-        yield return _levelManager.TVMessage("GOOD    JOB");
+        yield return _levelManager.TVMessage("DO NOT LET TIME RUN OUT");
+        yield return _levelManager.TVMessage("YOUR SHIFT STARTS NOW", true);
 
 
         //_lampAlarm.TurnOn();

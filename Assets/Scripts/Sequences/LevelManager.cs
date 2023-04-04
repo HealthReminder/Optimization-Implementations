@@ -29,9 +29,11 @@ public class LevelManager : MonoBehaviour
     [SerializeField] internal Lamp[] beltLights;
     [SerializeField] internal Lamp centerLight;
     [SerializeField] internal Lamp leverLight;
-    internal IEnumerator PlayerLookAt(Transform t, float speed)
+    internal IEnumerator PlayerLookAt(Transform t, float speed, bool enableLook = false)
     {
+        playerController.CanLook = false;
         yield return playerLookAt.LookAtRoutine(t, speed);
+        playerController.CanLook = enableLook;
         yield break;
     }
     internal IEnumerator ToggleTitleLights(bool isOn)
@@ -58,9 +60,8 @@ public class LevelManager : MonoBehaviour
     }
     internal IEnumerator TVMessage(string txt, bool leaveOn = false)
     {
-
-        TVScreen.TurnOn();
         TVScreen.ChangeText(txt);
+        TVScreen.TurnOn();
         yield return new WaitForSeconds(2.5f);
 
         if (!leaveOn)
