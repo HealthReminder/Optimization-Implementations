@@ -11,7 +11,7 @@ public class DisableKinemactics : MonoBehaviour
     }
     public void Disable ()
     {
-        _rb.velocity = Vector3.zero;
+        _rb.linearVelocity = Vector3.zero;
         _rb.isKinematic = false;
     }
 }

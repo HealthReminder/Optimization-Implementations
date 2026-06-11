@@ -57,7 +57,7 @@ public class Pooling<PoolObject> where PoolObject : Component
 
         }
         if (obj.GetComponent<Rigidbody>())
-            obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            obj.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 
         return obj;
     }

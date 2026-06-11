@@ -48,7 +48,7 @@ public class Lever : MonoBehaviour
     IEnumerator JamRoutine()
     {
         _leverRb.isKinematic = true;
-        _leverRb.velocity = Vector3.zero;
+        _leverRb.linearVelocity = Vector3.zero;
         yield return new WaitForSeconds(2);
         _leverRb.isKinematic = false;
         yield break;
