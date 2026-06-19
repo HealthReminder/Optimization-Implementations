@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8842405563855568500}
   - component: {fileID: 9048005464563602307}
   - component: {fileID: 5428515635809070820}
+  - component: {fileID: 9021584509811437994}
+  - component: {fileID: 4799183416616349487}
   m_Layer: 0
   m_Name: Trash Bag 1
   m_TagString: Grabbable
@@ -84,6 +86,50 @@ CapsuleCollider:
   m_Height: 0.2
   m_Direction: 1
   m_Center: {x: -0.01, y: 0.1, z: 0}
+--- !u!114 &9021584509811437994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496668005863180594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d261865d254b0148b96ca2881db1619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayAudioOnPosition
+  _sfxSet: 100
+  _volume: 1
+  _pitchDefault: 1
+  _pitchRange: 0.1
+--- !u!114 &4799183416616349487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4496668005863180594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f68b5335390ba324fb49659f4acd09cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnCollisionEvent
+  minMagnitude: 1
+  PositionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9021584509811437994}
+        m_TargetAssemblyTypeName: PlayAudioOnPosition, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &3610016820803879773
 PrefabInstance:
   m_ObjectHideFlags: 0

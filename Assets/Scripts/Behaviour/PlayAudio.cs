@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using Colosso.Tools.Audio;
+
 using UnityEngine;
 
 public class PlayAudio : MonoBehaviour
 {
-    [SerializeField] private string setName;
-    [SerializeField] private float volume;
-    [SerializeField] private float pitchDefault = 1;
-    [SerializeField] private float pitchRange = 0;
+    [SerializeField] private SFXSets _sfxSet;
+    [SerializeField] private float _volume;
+    [SerializeField] private float _pitchDefault = 1;
+    [SerializeField] private float _pitchRange = 0;
     public void PlaySound()
     {
-        AudioManager.Instance.SpawnSound(setName, volume, transform.position, pitchDefault, pitchRange);
+        AudioManager.Instance?.PlaySound(_sfxSet, _volume, transform.position, _pitchDefault, _pitchRange);
     }
 }

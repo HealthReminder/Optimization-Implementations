@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Colosso.Tools.Audio;
 
 public class PlayAudioOnPosition : MonoBehaviour
 {
-    [SerializeField] private string setName;
-    [SerializeField] private float volume;
-    [SerializeField] private float pitchDefault = 1;
-    [SerializeField] private float pitchRange = 0;
+    [SerializeField] private SFXSets _sfxSet;
+    [SerializeField] private float _volume;
+    [SerializeField] private float _pitchDefault = 1;
+    [SerializeField] private float _pitchRange = 0;
     public void PlaySound(Vector3 pos)
     {
-        AudioManager.Instance.SpawnSound(setName, volume, pos, pitchDefault, pitchRange);
+        AudioManager.Instance?.PlaySound(_sfxSet, _volume, transform.position, _pitchDefault, _pitchRange);
     }
 }

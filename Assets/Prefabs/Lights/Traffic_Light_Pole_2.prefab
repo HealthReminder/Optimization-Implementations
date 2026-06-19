@@ -113,6 +113,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3100367242248572169, guid: d7fcdd21e28229448a3e295cedaba6ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6722150897238651504, guid: d7fcdd21e28229448a3e295cedaba6ab, type: 3}
       propertyPath: m_Name
       value: Traffic_Light
@@ -120,6 +124,10 @@ PrefabInstance:
     - target: {fileID: 6722150897238651504, guid: d7fcdd21e28229448a3e295cedaba6ab, type: 3}
       propertyPath: m_TagString
       value: Grabbable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7848423353850828742, guid: d7fcdd21e28229448a3e295cedaba6ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -150,9 +158,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5887215256645195489}
   serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_Mass: 6
+  m_LinearDamping: 0.25
+  m_AngularDamping: 0.25
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -183,10 +191,10 @@ HingeJoint:
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: 0, y: 1, z: 0}
-  m_UseSpring: 0
+  m_UseSpring: 1
   m_Spring:
-    spring: 0.1
-    damper: 0.1
+    spring: 30
+    damper: 0.5
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -200,13 +208,13 @@ HingeJoint:
     min: -180
     max: 15
     bounciness: 1
-    bounceMinVelocity: 0.2
+    bounceMinVelocity: 0.1
     contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 1
+  m_MassScale: 4
   m_ConnectedMassScale: 1
 --- !u!1001 &9013795862083466647
 PrefabInstance:
