@@ -4,15 +4,7 @@ Deliverance CORP. is a game in which you play as a warehouse worker sifting thro
 
 The goal of this project is to reproduce optimization implementations to allow the game to support a higher number of objects in a scene, lightweight runtime game object instantiation, and optimized rendering techniques. The project is developed in Unity Engine using C#. It incorporates several design patterns and principles to achieve efficient and flexible game development. It follow Microsoft's C# best practices and [naming conventions](https://www.c-sharpcorner.com/UploadFile/8a67c0/C-Sharp-coding-standards-and-naming-conventions/).
 
-<iframe
-    width="560"
-    height="315"
-    src="https://www.youtube.com/embed/6lRS5QsLHSI?list=PLEHvKAmM7EOZIvJOlqhS27CWvGfp1nlPN"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-</iframe>
+[![Watch on YouTube](https://img.youtube.com/vi/6lRS5QsLHSI/maxresdefault.jpg)](https://www.youtube.com/watch?v=6lRS5QsLHSI&list=PLEHvKAmM7EOZIvJOlqhS27CWvGfp1nlPN&index=2)
  
 *Contents*
 - [**Deliverance CORP.**](#deliverance-corp)
